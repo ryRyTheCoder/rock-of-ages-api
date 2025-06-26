@@ -44,3 +44,8 @@ You would follow the same process for building any Django REST API project. Then
 4. `rockapi/views/__init__.py`
 5. The `.vscode` directory and its contents. Replace `rockproject` in the settings file with your project name.
 6. The `.pylintrc` file.
+
+## Running Tests
+1. Run `pipenv shell`
+2. Run `pipenv install`
+3. Run `python manage.py test`
