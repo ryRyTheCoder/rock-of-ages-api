@@ -1,4 +1,4 @@
-# Use Python 3.8 as the base image
+# Use Python as the base image
 FROM python:latest
 
 # Set environment variables
@@ -35,4 +35,4 @@ RUN chmod +x /app/seed_database.sh
 EXPOSE 8000
 
 # Command to run scripts using the pipenv environment
-CMD pipenv run bash -c "./seed_database.sh && python manage.py runserver 0.0.0.0:8000"
+CMD ["pipenv", "run", "bash", "-c", "sed -i 's/\r$//' seed_database.sh && ./seed_database.sh && python manage.py runserver 0.0.0.0:8000"]
